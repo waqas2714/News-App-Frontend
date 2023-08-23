@@ -12,7 +12,7 @@ const Home = () => {
   const [ trendingNews, setTrendingNews] = useState([]);
   const [ isLoading, setIsLoading ] = useState(false)
   const navigate = useNavigate();
-
+  const user = localStorage.getItem('userName');
   const getTrendingNews = async ()=>{
     setIsLoading(true);
     try {
@@ -58,7 +58,7 @@ const Home = () => {
         <Navbar />
     </header>
     <main className='main-home'>
-        <h4>Hi Waqas, Here are some trending news</h4>
+        <h4>Hi {user}, Here are some trending news</h4>
         <div className="trending-container">
          {isLoading ? <img src={Loader} alt="Loading..."/> : 
          trendingNews && trendingNews.length > 0 ?

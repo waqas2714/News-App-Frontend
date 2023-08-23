@@ -1,0 +1,37 @@
+.comment-form{
+    position: relative;
+}
+
+.comments input{
+    padding: 13px;
+    width: 100%;
+    border: 1px solid rgba(185, 170, 84,0.7);
+    border-radius: 53px;
+    height: 3rem;
+    background-color: transparent;
+    padding-right: 71px;
+    color: black;
+}
+
+.add-comment-btn{
+    position: absolute;
+    right: 0%;
+    height: 3rem;
+    background-color: rgba(185, 170, 84,0.2);
+    border: 1px solid rgba(185, 170, 84,0.7);
+    border-radius: 53px;
+    transition: 0.2s ease-in-out;
+}
+
+.add-comment-btn:hover{
+    cursor: pointer;
+    border: 1px solid rgba(185, 170, 84,0.7);
+    background-color: rgba(185, 170, 84,0.8);
+    outline: none;
+}
+
+.comment-container{
+    max-height: 500px;
+    overflow: auto;
+    height: fit-content;
+}

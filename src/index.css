@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap');
+*{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(196, 171, 30);
+  border: 1px solid black;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color:  rgb(197, 179, 74);
+}
+
+.loader{
+  height: 80vh;
+}

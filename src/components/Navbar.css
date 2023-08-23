@@ -1,0 +1,144 @@
+nav {
+  height: 10vh;
+  width: 100vw;
+  padding: 0px 1rem;
+  background-color: rgb(226 211 122 / 70%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  z-index: 11;
+}
+
+.logo-container {
+  display: inline-block;
+  width: fit-content;
+  height: 100%;
+}
+
+.nav-logo {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.nav-logo:hover {
+  cursor: pointer;
+}
+
+.links-container {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link-and-underline {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: fit-content;
+}
+
+.main-links {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: black;
+}
+
+.underline {
+  height: 6px;
+  width: auto;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+}
+
+.link-and-underline:hover .underline,
+.main-links:active + .underline {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.backdrop {
+  width: 100vw;
+  height: 200vh;
+  position: absolute;
+  z-index: 10;
+  background-color: rgb(226 211 122 / 69%);
+  transform: translateX(100vw);
+  transition: 0.4s ease-in-out;
+}
+
+.vertical-links-container {
+  background-color: rgb(226 211 122 / 100%);
+  height: 100vh;
+  min-width: 166px;
+  width: 40vw;
+  position: fixed;
+  left: 0;
+  transition: 0.4s ease-in-out;
+  bottom: 0;
+  margin-top: 78%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  color: black;
+  z-index: 22;
+  transform: translateX(100vw);
+}
+
+.burger {
+  display: none;
+}
+
+.left-links {
+  display: none;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: black;
+}
+
+@media (max-width: 45rem) {
+  .transform-back {
+    transform: translateX(0vw);
+  }
+
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .main-links {
+    display: none;
+  }
+
+  .left-links {
+    display: block;
+    transition: 0.3s ease-in-out;
+  }
+
+  .left-links:hover {
+    background: black;
+    width: 100%;
+    color: white;
+    border-radius: 9rem;
+    text-align: center;
+  }
+
+  .underline {
+    display: none;
+  }
+
+  .links-container {
+    width: fit-content;
+  }
+
+  nav {
+    justify-content: space-around;
+  }
+}

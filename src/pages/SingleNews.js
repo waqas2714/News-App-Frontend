@@ -9,6 +9,8 @@ import { backendUrl } from "../utils/URLs";
 import Loader from "../assets/loader.gif";
 import Comments from "../components/Comments";
 import { FcLike } from "react-icons/fc";
+import { toastOptions } from "./Signup";
+import { toast } from "react-toastify";
 
 const SingleNews = () => {
   const [allNews, setAllNews] = useState([]);
@@ -20,6 +22,13 @@ const SingleNews = () => {
   const [comments, setComments] = useState("");
   const [openLiked, setOpenLiked] = useState(false);
   // name, title, imgUrl, description, content, reference
+  const user = localStorage.getItem('userName');
+  useEffect(()=>{
+    if (!user) {
+      toast.error("Not Authorized. Please Log in.",toastOptions);
+      navigate("/");
+  }
+  },[])
   if (requiredNews) {
     var { content, description, name, url, urlToImage, title } = requiredNews;
   }

@@ -6,16 +6,26 @@ import SideBar from '../components/SideBar'
 import ReactPaginate from 'react-paginate'
 import NewsContainer from '../components/NewsContainer'
 import Loader from '../assets/loader.gif'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { backendUrl } from '../utils/URLs'
 import {FcLike} from 'react-icons/fc'
 import axios from 'axios'
+import { toast } from 'react-toastify'
+import { toastOptions } from './Signup'
 
 const NewsPage = () => {
   const [allNews, setAllNews] = useState();
   const [isLoading, setIsLoading] = useState(false)
   const [openLiked, setOpenLiked] = useState(false);
   const {pageName} = useParams();  
+  const navigate = useNavigate();
+  const user = localStorage.getItem('userName');
+  useEffect(()=>{
+    if (!user) {
+      toast.error("Not Authorized. Please Log in.",toastOptions);
+      navigate("/");
+  }
+  },[])
 
   const getSingleNews = async ()=>{
     try {

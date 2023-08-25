@@ -13,6 +13,12 @@ const Home = () => {
   const [ isLoading, setIsLoading ] = useState(false)
   const navigate = useNavigate();
   const user = localStorage.getItem('userName');
+  useEffect(()=>{
+    if (!user) {
+      toast.error("Not Authorized. Please Log in.",toastOptions);
+      navigate("/");
+  }
+  },[])
   const getTrendingNews = async ()=>{
     setIsLoading(true);
     try {
@@ -50,6 +56,8 @@ const Home = () => {
   useEffect(()=>{
     getTrendingNews();
   },[])  
+
+  
 
 
   return (

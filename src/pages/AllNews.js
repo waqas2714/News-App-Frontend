@@ -9,12 +9,23 @@ import { backendUrl } from '../utils/URLs'
 import {FcLike} from 'react-icons/fc'
 import Loader from '../assets/loader.gif'
 import ReactPaginate from 'react-paginate';
+import { toast } from 'react-toastify'
+import { toastOptions } from './Signup'
+import { useNavigate } from 'react-router-dom'
 
 
 const AllNews = () => {
   const [allNews, setAllNews] = useState();
   const [isLoading, setIsLoading] = useState(false);  
   const [openLiked, setOpenLiked] = useState(false);
+  const navigate = useNavigate();
+  const user = localStorage.getItem('userName');
+  useEffect(()=>{
+    if (!user) {
+      toast.error("Not Authorized. Please Log in.",toastOptions);
+      navigate("/");
+  }
+  },[])
 
   const getAllNews = async ()=>{
     try {

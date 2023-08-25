@@ -30,3 +30,10 @@ code {
 .loader{
   height: 80vh;
 }
+
+@media (max-width: 45rem){
+  .loader{
+      height: 48vh;
+      margin-top: 1rem;
+  }
+}

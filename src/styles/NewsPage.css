@@ -83,8 +83,8 @@
 
   .liked{
     display: block;
-    right: 0;
-    bottom: 40%;
+    right: 12%;
+    bottom: 50%;
     position: fixed;
   }
 
